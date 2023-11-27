@@ -12,11 +12,11 @@ export default function Menu() {
             </div>
             <div className="itemContentMenu">
                 <div className="textItem marginSair">Verificar disponibilidade</div>
-                <i class="fa-solid fa-house textItem"></i>
+                <i class="fa-solid fa-magnifying-glass textItem"></i>
             </div>
             <div className="itemContentMenu">
                 <div className="textItem marginSair">Acompanhar Solicitação</div>
-                <i class="fa-solid fa-house textItem"></i>
+                <i class="fa-regular fa-square-check textItem"></i>
             </div>
         </div>
         <div className="goItens">

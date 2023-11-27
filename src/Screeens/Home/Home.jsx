@@ -2,6 +2,7 @@ import React from 'react'
 import './Home.css'
 import Header from '../../Components/Header/Header'
 import Menu from '../../Components/Menu/Menu'
+import Map from '../../Components/Map/Map'
 
 export default function Home() {
   return (
@@ -13,7 +14,9 @@ export default function Home() {
           <div className="titleFildset">Seja bem-vindo(a),</div>
           <div className="textFildset">O Sistema Integrado de Solicitações e Gerenciamento  DE VEÍCULOS  - DIVTRANS, gerencia todas da Unilab.</div>
         </div>
-        <div className="rightFildset">Mapa</div>
+        <div className="rightFildset">
+          <Map />
+        </div>
       </div>
     </div>
   )
