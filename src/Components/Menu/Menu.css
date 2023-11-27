@@ -1,0 +1,41 @@
+.Menu{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--castanhoCC);
+}
+.menuContent{
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.goItens{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.textItem{
+    color: #fff;
+    font-size: 1rem;
+    
+}
+.marginSair{
+    padding: 0px 5px;
+    font-weight: 500;
+}
+.stayItens{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.itemContentMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
