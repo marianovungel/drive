@@ -1,0 +1,118 @@
+.Pesquisa{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+}
+.pesquisaContent{
+    width: 100%;
+    height: calc(100vh - 125px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--cinzaC);
+    padding: 20px 0px 5px 0px;
+}
+.PesquisaForma{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.textPesquisaForma{
+    width: 100%;
+    display: flex;align-items: center;
+    justify-content: flex-start;
+    padding: 10px 0px;
+    color: var(--castanho);
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.DivContentForm{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--cinza);
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 2px #f7f7f7;
+}
+.inputsFormPesquisa{
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.labelsForm{
+    width: 20%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+.labelsFormI{
+    width: 30%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+}
+.labelsFormT{
+    width: 30%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+}
+.LabelAno{
+    color: var(--castanho);
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.inputNome{
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 1px 0.5px var(--castanho);
+}
+.buttonFormPesquisa{
+    width: 100%;
+    padding: 10px 0px 10px 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ButtonPesq{
+    width: 170px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--castanho);
+    color: var(--branco);
+    cursor: pointer;
+    font-weight: 500;
+}
+.marginBB{
+    margin: 0px 50px;
+}
+.ResultText{
+    width: 100%;
+    padding: 30px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: var(--castanho);
+    font-weight: 500;
+}
