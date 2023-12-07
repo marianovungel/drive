@@ -12,7 +12,6 @@ export default function Login() {
     const Submit = async (e)=>{
       e.preventDefault();
       dispatch({ type: "LOGIN_START"})
-      console.log([userRef.current.value, passwordRef.current.value])
       try {
           const {data} = await apiSig.post("/authenticate", {
             login: userRef.current.value,
@@ -23,8 +22,8 @@ export default function Login() {
             headers: {authorization: data.access_token}
           })
           console.log(sigData.data[0])
-          dispatch({ type: "LOGIN_SUCCESS", payload: sigData.data[0]})
-            window.location.replace("/");
+          // dispatch({ type: "LOGIN_SUCCESS", payload: sigData.data[0]})
+            // window.location.replace("/");
       } catch (error) {
         dispatch({ type: "LOGIN_FAILURE"})
       }

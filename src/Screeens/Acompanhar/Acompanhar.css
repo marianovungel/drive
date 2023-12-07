@@ -1,0 +1,95 @@
+.Acompanhamento{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Acompanhar{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+.SetentaAconpanhar{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 0px;
+
+}
+.minhasSolicitacoes{
+    width: 100%;
+    padding:0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.bannerMinhas{
+    width: 200px;
+    height: 45px;
+    background-color: var(--castanho);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+.tabelaSolicitacoes{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:0px;
+   
+}
+.menuTableAcomp{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-bottom: 1px solid #666;
+    background-color: var(--cinza);
+    margin: 0px;
+    padding: 10px 0px;
+}
+.menuTableAcompItem{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-bottom: 1px solid #666;
+    background-color: #f5f5f5;
+    margin: 0px;
+    padding: 10px 0px;
+}
+.itemmenuTableAcomp{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    background-color: var(--cinza);
+}
+.itemmenuTableAcompItem{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    background-color: #f5f5f5;
+}
+.Azul{
+    color: rgb(112, 112, 241);
+}
+.Verde{
+    color: green;
+}
+.vermelho{
+    color: red;
+}

@@ -17,10 +17,10 @@ export default function Menu() {
                 <div className="textItem marginSair">Verificar disponibilidade</div>
                 <i className="fa-solid fa-magnifying-glass textItem"></i>
             </Link>
-            <div className="itemContentMenu">
+            <Link to="/acompanhar" className="itemContentMenu">
                 <div className="textItem marginSair">Acompanhar Solicitação</div>
                 <i className="fa-regular fa-square-check textItem"></i>
-            </div>
+            </Link>
         </div>
         <div className="goItens">
             <div className="textItem marginSair">Sair</div>
