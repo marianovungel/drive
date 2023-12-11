@@ -7,6 +7,7 @@ import { useContext } from 'react';
 import {Context} from './Context/Context'
 import Form from './Screeens/Form/Form';
 import Acompanhar from './Screeens/Acompanhar/Acompanhar';
+import Gerenciar from './Adm/Screens/Gerenciar/Gerenciar';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/pesquisa" element={user ? <Pesquisa /> : <Login /> } exact />
             <Route path="/form/:id" element={user ? <Form /> : <Login /> } exact />
             <Route path="/acompanhar" element={user ? <Acompanhar /> : <Login /> } exact />
+            <Route path="/gerenciar" element={user ? <Gerenciar /> : <Login /> } exact />
           </Routes>
         </Router>
     </div>
