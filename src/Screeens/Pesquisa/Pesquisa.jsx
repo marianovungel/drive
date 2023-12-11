@@ -1,52 +1,46 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './Pesquisa.css'
 import Header from '../../Components/Header/Header'
 import Menu from '../../Components/Menu/Menu'
+import api from '../../api'
+import { Link } from 'react-router-dom'
 
-const vetor = [
-  {
-    tipo: "carro",
-    modelo: "Fiat Uno",
-    placa: "ABC-1234",
-    quantidade: 10,
-    capacidade: 5
-  },
-  {
-    tipo: "motocicleta",
-    modelo: "Honda CG 125",
-    placa: "DEF-5678",
-    quantidade: 20,
-    capacidade: 2
-  },
-  {
-    tipo: "ônibus",
-    modelo: "Marcopolo Paradiso G7 1800DD",
-    placa: "GHI-9012",
-    quantidade: 5,
-    capacidade: 45
-  },
-  {
-    tipo: "caminhão",
-    modelo: "Volkswagen Constellation 26.260",
-    placa: "JKL-3456",
-    quantidade: 10,
-    capacidade: 20
-  },
-  {
-    tipo: "trator",
-    modelo: "John Deere 6215R",
-    placa: "MNO-7890",
-    quantidade: 5,
-    capacidade: 100
-  }
-];
 
 export default function Pesquisa() {
-  const [res, setRes] = useState(vetor)
+  const [res, setRes] = useState([])
+  const [date, setDate] = useState("")
+  const [Show, setShow] = useState(false)
 
-  useEffect(()=>{
-    setRes(vetor)
-  }, [])
+
+  // Using string manipulation
+// function formatDate(dateString) {
+//   const [year, month, day] = dateString.split("/");
+//   return `${day}/${month}/${year}`;
+// }
+
+// var newDate = date.replace(/-/g, "/");
+// dateConveted = formatDate(newDate)
+
+  const Submit = async (e)=>{
+    e.preventDefault();
+    setShow(false)
+    try {
+      
+      var ress = await api.post("/solicitar/pesq", {
+        date
+      })
+      setShow(true)
+      setRes(ress.data.data)
+    } catch (error) {
+      alert("Erro no Servidor!")
+    }
+  }
+
+  const CleamInput = ()=>{
+    setDate("")
+    setShow(false)
+  }
+
 
   return (
     <div className='Pesquisa'>
@@ -55,46 +49,44 @@ export default function Pesquisa() {
       <div className="pesquisaContent">
         <div className="PesquisaForma">
             <div className="textPesquisaForma">Verificar disponibilidade de Veículo</div>
-            <div className="DivContentForm">
+            <form className="DivContentForm" onSubmit={Submit}>
                 <div className="inputsFormPesquisa">
                     <div className="labelsForm">
-                        <label htmlFor="" className='LabelAno'>Ano *</label>
-                        <label htmlFor="" className='LabelAno'>Mês *</label>
-                        <label htmlFor="" className='LabelAno'>Dia *</label>
-                        <label htmlFor="" className='LabelAno'>Nº de Passageiro  *</label>
+                        <label htmlFor="" className='LabelAno'>data *</label>
                     </div>
                     <div className="labelsFormI">
-                        <input type="text" className="inputNome" />
-                        <input type="text" className="inputNome" />
-                        <input type="text" className="inputNome" />
-                        <input type="text" className="inputNome" />
+                        <input type="date" required className="inputNome" value={date} onChange={(e)=>setDate(e.target.value)} />
                     </div>
                 </div>
                 <div className="buttonFormPesquisa">
-                    <button className='ButtonPesq'>Pesquisar <i className="fa-solid fa-magnifying-glass"></i></button>
-                    <button className='ButtonPesq marginBB'>Limpar <i className="fa-solid fa-broom"></i></button>
+                    <button className='ButtonPesq' value="Send" type="submit">Pesquisar <i className="fa-solid fa-magnifying-glass sizeIcon"></i></button>
+                    <div className='ButtonPesq marginBB' onClick={()=>CleamInput()}>Limpar <i className="fa-solid fa-broom sizeIcon"></i></div>
                 </div>
                 <div className="buttonFormPesquisa">
                     <i>Os campos marcados com asterisco (*) são de preenchimento obrigatório.</i>
                 </div>
-            </div>
-            <div className="ResultText">Resultado da Busca</div>
-            <div className="MenuTable">
-              <div className="itemTableMenu">Tipo de veículo</div>
-              <div className="itemTableMenu">Modelo do veículo</div>
-              <div className="itemTableMenu">Placa do veículo</div>
-              {/* <div className="itemTableMenu">Quant. disponível</div> */}
-              <div className="itemTableMenu">Capacidade</div>
-            </div>
-            {res?.map((r)=>(
-              <div className="MenuTableItem">
-                <div className="itemTableMenuData">{r.tipo}</div>
-                <div className="itemTableMenuData">{r.modelo}</div>
-                <div className="itemTableMenuData">{r.placa}</div>
-                {/* <div className="itemTableMenuData">{r.quantidade}</div> */}
-                <div className="itemTableMenuData">{r.capacidade}</div>
-              </div>
-            ))}
+            </form>
+            {Show && (
+              <>
+                <div className="ResultText">Resultado da Busca</div>
+                <div className="MenuTable">
+                  <div className="itemTableMenu">Tipo de veículo</div>
+                  <div className="itemTableMenu">Modelo do veículo</div>
+                  <div className="itemTableMenu">Placa do veículo</div>
+                  {/* <div className="itemTableMenu">Quant. disponível</div> */}
+                  <div className="itemTableMenu">Capacidade</div>
+                </div>
+                {res?.map((r)=>(
+                  <Link to={`/form/${r?._id}`} className="MenuTableItem" key={r?._id}>
+                    <div className="itemTableMenuData">{r?.tipo}</div>
+                    <div className="itemTableMenuData">{r?.marca}</div>
+                    <div className="itemTableMenuData">{r?.matricula}</div>
+                    {/* <div className="itemTableMenuData">{r?.quantidade}</div> */}
+                    <div className="itemTableMenuData">{r?.capacidade}</div>
+                  </Link>
+                ))}
+              </>
+            )}
         </div>
       </div>
     </div>

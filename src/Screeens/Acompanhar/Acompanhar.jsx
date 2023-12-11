@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import './Acompanhar.css'
 import Header from '../../Components/Header/Header'
 import Menu from '../../Components/Menu/Menu'
+import { useContext } from 'react';
+import {Context} from '../../Context/Context'
+import api from '../../api'
 
 var data = [
     {
@@ -36,10 +39,22 @@ var data = [
 
 export default function Acompanhar() {
     const [res, resSet] = useState(data)
+    const {user} = useContext(Context);
 
     useEffect(()=>{
-        resSet(data)
-    }, [])
+        const getData = async()=>{
+            try {
+                const data = await api.post("/solicitar/acompanhar",{
+                    user:user.login
+                })
+                console.log(data.data)
+                resSet(data.data)
+            } catch (error) {
+                
+            }
+        }
+        getData()
+    }, [user.login])
   return (
     <div className='Acompanhar'>
         <Header />
@@ -59,8 +74,8 @@ export default function Acompanhar() {
                     {res.map((d)=>(
                         <div className="menuTableAcompItem">
                             <div className="itemmenuTableAcompItem">{d.processo}</div>
-                            <div className="itemmenuTableAcompItem">{d.dia}</div>
-                            <div className="itemmenuTableAcompItem">{d.Destino}</div>
+                            <div className="itemmenuTableAcompItem">{d.date}</div>
+                            <div className="itemmenuTableAcompItem">{d.CidadeD}</div>
                             <div className="itemmenuTableAcompItem">
                                 {d.status === "Pendente" && (<div className="Azul">{d.status}</div>)}
                                 {d.status === "Aprovado" && (<div className="Verde">{d.status}</div>)}

@@ -19,7 +19,7 @@ function App() {
             <Route path="/" element={user ? <Home /> : <Login />} exact />
             <Route path="/login" element={user ? <Home /> : <Login /> } exact />
             <Route path="/pesquisa" element={user ? <Pesquisa /> : <Login /> } exact />
-            <Route path="/form" element={user ? <Form /> : <Login /> } exact />
+            <Route path="/form/:id" element={user ? <Form /> : <Login /> } exact />
             <Route path="/acompanhar" element={user ? <Acompanhar /> : <Login /> } exact />
           </Routes>
         </Router>

@@ -5,6 +5,14 @@
     height: 100%;
     /* background-color: var(--cinzaC); */
 }
+a{
+    text-decoration: none;
+    list-style: none;
+}
+.MenuTableItem{
+    text-decoration: none;
+    color: #000;
+}
 .pesquisaContent{
     width: 100%;
     height: calc(100vh);
@@ -50,16 +58,14 @@
     align-items: center;
 }
 .labelsForm{
-    width: 20%;
-    padding: 5px;
+    width: 70px;
+    padding: 5px 0px 5px 5px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
+    justify-content: flex-start;
+    align-items: center;
 }
 .labelsFormI{
-    width: 30%;
+    width: 50%;
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -96,17 +102,25 @@
     align-items: center;
 }
 .ButtonPesq{
-    width: 170px;
+    width: 95px;
     height: 40px;
     border-radius: 5px;
     border: none;
     background-color: var(--castanho);
     color: var(--branco);
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+.sizeIcon{
+    font-size: 0.7rem;
 }
 .marginBB{
-    margin: 0px 50px;
+    margin: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 .ResultText{
     width: 100%;
