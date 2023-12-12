@@ -1,0 +1,9 @@
+.linkGo{
+    text-decoration: none;
+    color: #666;
+    transform: scale(1);
+}
+.linkGo:hover{
+    transform: scale(1.005);
+    transition: 0.3s;
+}

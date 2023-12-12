@@ -7,6 +7,10 @@ import { useContext } from 'react';
 import {Context} from './Context/Context'
 import Form from './Screeens/Form/Form';
 import Acompanhar from './Screeens/Acompanhar/Acompanhar';
+import Gerenciar from './Adm/Screens/Gerenciar/Gerenciar';
+import HomeAdm from './Adm/Screens/HomeAdm/HomeAdm';
+import SolicitarAdm from './Adm/Screens/Solicitações/SolicitarAdm';
+import SingleSol from './Adm/Screens/SingleSol/SingleSol';
 
 
 function App() {
@@ -21,6 +25,10 @@ function App() {
             <Route path="/pesquisa" element={user ? <Pesquisa /> : <Login /> } exact />
             <Route path="/form/:id" element={user ? <Form /> : <Login /> } exact />
             <Route path="/acompanhar" element={user ? <Acompanhar /> : <Login /> } exact />
+            <Route path="/gerenciar" element={user ? <Gerenciar /> : <Login /> } exact />
+            <Route path="/homeadm" element={user ? <HomeAdm /> : <Login /> } exact />
+            <Route path="/solicitacoes" element={user ? <SolicitarAdm /> : <Login /> } exact />
+            <Route path="/form_preenchido/:id" element={user ? <SingleSol /> : <Login /> } exact />
           </Routes>
         </Router>
     </div>

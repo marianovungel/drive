@@ -7,6 +7,7 @@ import { useContext } from 'react';
 import {Context} from '../../Context/Context'
 import { useLocation} from 'react-router-dom';
 import Swal from 'sweetalert2'
+import SingleHeader from '../../Components/SingleHeader/SingleHeader'
 
 export default function Form() {
   
@@ -137,7 +138,7 @@ const Submit= async (e)=>{
 
   return (
     <>
-        <Header />
+        <SingleHeader />
         <Menu />
       <div className='centerForm'>
       <div>

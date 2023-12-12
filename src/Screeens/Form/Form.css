@@ -64,7 +64,7 @@
       background: #fff;
       box-shadow: 0 2px 5px #ccc; 
     }
-    input, select, textarea {
+    input, textarea {
       width: 100%;
       margin-bottom: 10px;
       border: 1px solid #ccc;
@@ -94,15 +94,15 @@
       margin-bottom: 10px;
     }
     .input-group > input, .input-group > button {
-      flex: 1; /* Distribui o espaço igualmente */
-      margin-right: 10px; /* Espaço entre os campos e o botão */
+      flex: 1; 
+      margin-right: 10px; 
     }
     .input-group > button {
-      margin-left: 0; /* Remover margem à esquerda do botão */
-      max-width: 120px; /* Largura máxima para o botão */
+      margin-left: 0; 
+      max-width: 120px; 
     }
     .input-group:last-child {
-      margin-right: 0; /* Remover margem à direita do último item */
+      margin-right: 0; 
     }
 
     /* Estilos para telas menores */
