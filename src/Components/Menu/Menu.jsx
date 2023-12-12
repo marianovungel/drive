@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Menu.css'
 import { Link } from 'react-router-dom'
+import { Context } from '../../Context/Context'
 
 export default function Menu() {
+  const { dispatch, user} = useContext(Context)
+
+    const hendSair = ()=>{
+        dispatch({type: "LOGOUT"})
+    }
+
   return (
     <div className='Menu'>
       <div className="menuContent">
@@ -21,8 +28,14 @@ export default function Menu() {
                 <div className="textItem marginSair">Acompanhar Solicitação</div>
                 <i className="fa-regular fa-square-check textItem"></i>
             </Link>
+            {user.login === "Drive@t" && (
+              <Link to="/homeadm" className="itemContentMenu">
+                  <div className="textItem marginSair">Painel</div>
+                  <i className="fa-solid fa-solar-panel textItem"></i>
+              </Link>
+            )}
         </div>
-        <div className="goItens">
+        <div className="goItens" onClick={hendSair}>
             <div className="textItem marginSair">Sair</div>
             <i className="fa-solid fa-arrow-right-from-bracket textItem"></i>
         </div>

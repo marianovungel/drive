@@ -8,12 +8,9 @@ import {Context} from './Context/Context'
 import Form from './Screeens/Form/Form';
 import Acompanhar from './Screeens/Acompanhar/Acompanhar';
 import Gerenciar from './Adm/Screens/Gerenciar/Gerenciar';
-<<<<<<< HEAD
 import HomeAdm from './Adm/Screens/HomeAdm/HomeAdm';
 import SolicitarAdm from './Adm/Screens/Solicitações/SolicitarAdm';
 import SingleSol from './Adm/Screens/SingleSol/SingleSol';
-=======
->>>>>>> f6cf5106713eb28f869efff5d2e03ae66203173e
 
 
 function App() {
@@ -28,13 +25,10 @@ function App() {
             <Route path="/pesquisa" element={user ? <Pesquisa /> : <Login /> } exact />
             <Route path="/form/:id" element={user ? <Form /> : <Login /> } exact />
             <Route path="/acompanhar" element={user ? <Acompanhar /> : <Login /> } exact />
-            <Route path="/gerenciar" element={user ? <Gerenciar /> : <Login /> } exact />
-<<<<<<< HEAD
-            <Route path="/homeadm" element={user ? <HomeAdm /> : <Login /> } exact />
-            <Route path="/solicitacoes" element={user ? <SolicitarAdm /> : <Login /> } exact />
-            <Route path="/form_preenchido/:id" element={user ? <SingleSol /> : <Login /> } exact />
-=======
->>>>>>> f6cf5106713eb28f869efff5d2e03ae66203173e
+            <Route path="/gerenciar" element={user.login === "Drive@t" ? <Gerenciar /> : <Login /> } exact />
+            <Route path="/homeadm" element={user.login === "Drive@t" ? <HomeAdm /> : <Login /> } exact />
+            <Route path="/solicitacoes" element={user.login === "Drive@t" ? <SolicitarAdm /> : <Login /> } exact />
+            <Route path="/form_preenchido/:id" element={user.login === "Drive@t" ? <SingleSol /> : <Login /> } exact />
           </Routes>
         </Router>
     </div>
